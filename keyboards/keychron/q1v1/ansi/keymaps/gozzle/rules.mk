@@ -1,0 +1,4 @@
+ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
+	SRC += rgb_matrix_user.c
+	RGB_MATRIX_CUSTOM_USER = yes
+endif
