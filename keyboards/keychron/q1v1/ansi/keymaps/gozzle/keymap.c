@@ -68,6 +68,13 @@ typedef union {
 
 user_config_t user_config;
 
+
+void matrix_init_user(void) {
+#ifdef RGB_MATRIX_ENABLE
+    rgb_matrix_init_user();
+#endif
+}
+
 void keyboard_post_init_user(void) {
     user_config.raw = eeconfig_read_user();
 }
@@ -80,13 +87,6 @@ void eeconfig_init_user(void) {
     user_config.fn_layer_transparent_keys_off = true;
     user_config.fn_layer_color_enable = false;
     eeconfig_update_user(user_config.raw);
-}
-
-
-void matrix_init_user(void) {
-#ifdef RGB_MATRIX_ENABLE
-    rgb_matrix_init_user();
-#endif
 }
 
 // Define custom behaviour for keys
