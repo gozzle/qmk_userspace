@@ -55,20 +55,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 
-// State object for EEPROM storage
-typedef union {
-    uint32_t raw;
-    struct {
-      bool caps_lock_light_tab :1;
-      bool caps_lock_light_alphas :1;
-      bool fn_layer_transparent_keys_off :1;
-      bool fn_layer_color_enable :1;
-    };
-} user_config_t;
-
-user_config_t user_config;
-
-
 void matrix_init_user(void) {
 #ifdef RGB_MATRIX_ENABLE
     rgb_matrix_init_user();
