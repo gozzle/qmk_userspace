@@ -27,3 +27,16 @@ enum custom_keycodes {
     KC_FN_LAYER_COLOR_TOGGLE,
     KC_BOOT_WITH_DELAY,  //restart into bootloader after 500ms hold timeout
 }
+
+// State object for EEPROM storage
+typedef union {
+    uint32_t raw;
+    struct {
+      bool caps_lock_light_tab :1;
+      bool caps_lock_light_alphas :1;
+      bool fn_layer_transparent_keys_off :1;
+      bool fn_layer_color_enable :1;
+    };
+} user_config_t;
+
+user_config_t user_config;
