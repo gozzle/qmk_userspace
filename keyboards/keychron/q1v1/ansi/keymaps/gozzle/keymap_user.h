@@ -26,7 +26,7 @@ enum custom_keycodes {
     KC_FN_LAYER_TRANSPARENT_KEYS_TOGGLE,
     KC_FN_LAYER_COLOR_TOGGLE,
     KC_BOOT_WITH_DELAY,  //restart into bootloader after 500ms hold timeout
-}
+};
 
 // State object for EEPROM storage
 typedef union {
