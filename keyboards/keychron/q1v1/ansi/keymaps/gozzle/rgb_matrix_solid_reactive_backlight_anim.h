@@ -27,6 +27,8 @@ uint8_t pause_ticks = RGB_MATRIX_KEYREACTIVE_DELAY;
 
 // after <pause_ticks>, cycle smoothly from HSV back to background color
 static hsv_t SOLID_REACTIVE_BACKLIGHT_math(hsv_t hsv, uint16_t offset) {
+  if (offset > 255) offset = 255;
+  
   hsv_t base = (hsv_t){RGB_MATRIX_SOLID_REACTIVE_BACKLIGHT_COLOR_HSV};
 
   offset = ((uint16_t)qsub8(offset, pause_ticks) * 255) / (255 - pause_ticks);
